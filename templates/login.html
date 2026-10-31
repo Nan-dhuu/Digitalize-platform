@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-left">
+        <h1>NEXORA</h1>
+        <h2>Manage Smarter.<br>Grow Together.</h2>
+        <p>Student Digitalized Platform</p>
+    </div>
+
+    <div class="login-right">
+        <div class="login-card">
+            <h1>Welcome Back!</h1>
+            <p>Login to your NEXORA account</p>
+
+            <form onsubmit="loginUser(event)">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="Enter email" required>
+
+                <label>Password</label>
+                <div class="password-field">
+                    <input type="password" id="password" placeholder="Enter password" required>
+                    <button type="button" onclick="togglePassword()">Show</button>
+                </div>
+
+                <button type="submit" class="main-btn">LOGIN</button>
+            </form>
+
+            <p class="register-link">
+                Don't have an account?
+                <a href="/register">Register</a>
+            </p>
+
+            <p class="demo">
+                Demo Login<br>
+                admin@nexora.com<br>
+                Nexora@123
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>NEXORA</h2>
+        <p class="side-subtitle">STUDENT PLATFORM</p>
+
+        <a class="active" href="/dashboard">▦ Dashboard</a>
+        <a href="/students">♙ Students</a>
+        <a href="/courses">▤ Courses</a>
+        <a href="/subjects">▧ Subjects</a>
+
+        <button onclick="logoutUser()" class="logout-btn">↪ Logout</button>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="top-header">
+            <h2>Dashboard</h2>
+            <span id="welcomeUser">Welcome, Admin</span>
+        </header>
+
+        <section class="welcome-section">
+            <div>
+                <h1>Welcome to NEXORA 👋</h1>
+                <p>Manage your student information in one place.</p>
+            </div>
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">♙</div>
+                <h3>Total Students</h3>
+                <h1 id="studentCount">0</h1>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">▤</div>
+                <h3>Total Courses</h3>
+                <h1 id="courseCount">0</h1>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">▧</div>
+                <h3>Total Subjects</h3>
+                <h1 id="subjectCount">0</h1>
+            </div>
+
+        </section>
+
+        <section class="content-card">
+            <h2>Quick Access</h2>
+
+            <div class="quick-links">
+                <a href="/students">Manage Students →</a>
+                <a href="/courses">Manage Courses →</a>
+                <a href="/subjects">Manage Subjects →</a>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Recent Students</h2>
+            <div id="recentStudents"></div>
+        </section>
+
+    </main>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

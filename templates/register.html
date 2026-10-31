@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-left">
+        <h1>NEXORA</h1>
+        <h2>Start Your<br>Journey With Us.</h2>
+        <p>Student Digitalized Platform</p>
+    </div>
+
+    <div class="login-right">
+        <div class="login-card">
+            <h1>Create Account</h1>
+            <p>Register to access NEXORA</p>
+
+            <form onsubmit="registerUser(event)">
+                <label>Full Name</label>
+                <input type="text" id="regName" placeholder="Enter your name" required>
+
+                <label>Email Address</label>
+                <input type="email" id="regEmail" placeholder="Enter email" required>
+
+                <label>Password</label>
+                <input type="password" id="regPassword" placeholder="Create password" minlength="6" required>
+
+                <button class="main-btn">REGISTER</button>
+            </form>
+
+            <p class="register-link">
+                Already have an account?
+                <a href="/">Login</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | Subjects</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <h2>NEXORA</h2>
+        <p class="side-subtitle">STUDENT PLATFORM</p>
+        <a href="/dashboard">▦ Dashboard</a>
+        <a href="/students">♙ Students</a>
+        <a href="/courses">▤ Courses</a>
+        <a class="active" href="/subjects">▧ Subjects</a>
+        <button onclick="logoutUser()" class="logout-btn">↪ Logout</button>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <h2>Subject Management</h2>
+            <span>NEXORA / Subjects</span>
+        </header>
+
+        <section class="content-card">
+            <div class="section-heading">
+                <div>
+                    <h1>Subjects</h1>
+                    <p>Manage subjects and subject codes</p>
+                </div>
+                <button class="main-btn add-btn" onclick="openForm('subjects')">+ Add Subject</button>
+            </div>
+
+            <input class="search-box" id="subjectsSearch"
+                   placeholder="Search subjects..." oninput="searchRecords('subjects')">
+
+            <div id="subjectsForm" class="form-area hidden">
+                <h3>Add Subject</h3>
+                <form onsubmit="saveRecord(event,'subjects')">
+                    <input id="subjectsId" type="hidden">
+                    <input id="subjectsName" placeholder="Subject name" required>
+                    <input id="subjectsCode" placeholder="Subject code" required>
+                    <input id="subjectsCourse" placeholder="Related course" required>
+                    <button class="main-btn">Save Subject</button>
+                    <button type="button" class="cancel-btn" onclick="closeForm('subjects')">Cancel</button>
+                </form>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject Name</th><th>Subject Code</th>
+                            <th>Course</th><th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subjectsTable"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
